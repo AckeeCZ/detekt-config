@@ -1,0 +1,18 @@
+[versions]
+detekt = "1.23.8"
+kotlin = "2.2.0"
+mavenPublish = "0.34.0"
+
+[libraries]
+detekt-formatting = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" }
+
+# Build-logic dependencies
+mavenPublish-gradlePlugin = { module = "com.vanniktech:gradle-maven-publish-plugin", version.ref = "mavenPublish" }
+
+[plugins]
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+mavenPublish-base = { id = "com.vanniktech.maven.publish.base", version.ref = "mavenPublish" }
+
+# Convention plugins defined by this project
+ackeecz-detektconfig-publishing = { id = "ackeecz.detektconfig.publishing" }

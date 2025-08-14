@@ -1,0 +1,57 @@
+comments:
+  AbsentOrWrongFileLicense:
+    active: false
+
+complexity:
+  CyclomaticComplexMethod:
+    excludes: "**Test.kt"
+  LongMethod:
+    ignoreAnnotated: ['Composable', 'TestDataFactory']
+    excludes: "**Test.kt"
+  LongParameterList:
+    ignoreAnnotated: ['Composable', 'TestDataFactory']
+  TooManyFunctions:
+    active: false
+
+exceptions:
+  TooGenericExceptionCaught:
+    active: false
+
+formatting:
+  ArgumentListWrapping:
+    maxLineLength: 150
+  CommentWrapping:
+    active: false
+  ContextReceiverMapping:
+    maxLineLength: 150
+  FunctionReturnTypeSpacing:
+    maxLineLength: 150
+  FunctionSignature:
+    maxLineLength: 150
+  MaximumLineLength:
+    maxLineLength: 150
+  ParameterListSpacing:
+    maxLineLength: 150
+  ParameterListWrapping:
+    maxLineLength: 150
+  ParameterWrapping:
+    maxLineLength: 150
+  PropertyWrapping:
+    maxLineLength: 150
+  Wrapping:
+    maxLineLength: 150
+
+naming:
+  FunctionNaming:
+    ignoreAnnotated: ['Composable']
+
+style:
+  MagicNumber:
+    ignorePropertyDeclaration: true
+    ignoreLocalVariableDeclaration: true
+  MaxLineLength:
+    maxLineLength: 150
+  UnnecessaryAbstractClass:
+    active: false
+  UnusedPrivateMember:
+    ignoreAnnotated: [ 'Preview' ]
