@@ -7,5 +7,8 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 ### core
+
+## [1.0.0] - 2025-09-16
+### core
 #### Added
 - First version of core config file. Configured against Detekt 1.23.8.
