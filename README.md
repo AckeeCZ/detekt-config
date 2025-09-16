@@ -53,7 +53,7 @@ private fun Project.registerSetUpDetektConfigsForIdePluginTask(detektConfig: Con
     val rootTasks = rootProject.tasks
     if (rootTasks.find { it.name == taskName } == null) {
         val taskProvider = rootTasks.register<Copy>(taskName) {
-            from(detektConfig.files)
+            from(provider { detektConfig.files })
             into("$rootDir/build/detektConfigs")
             rename { fileName ->
                 val lastDash = fileName.lastIndexOf('-')
