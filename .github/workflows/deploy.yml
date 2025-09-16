@@ -1,0 +1,43 @@
+name: Deploy
+
+on:
+  push:
+    tags:
+      - v*
+
+env:
+  GPG_KEY: ${{ secrets.ANDROID_GPG_KEY }}
+  GPG_PASSWORD: ${{ secrets.ANDROID_SIGNING_PASSWORD }}
+  MAVEN_USERNAME: ${{ secrets.ANDROID_MAVEN_CENTRAL_USERNAME }}
+  MAVEN_PASSWORD: ${{ secrets.ANDROID_MAVEN_CENTRAL_PASSWORD }}
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      # Needed by softprops/action-gh-release to be able to create a release
+      contents: write
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v5
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'jetbrains'
+        env:
+          GITHUB_TOKEN: ${{ secrets.github-token }}
+
+      - name: Publish to Maven Central
+        run: |
+          ./gradlew --stacktrace publishAndReleaseToMavenCentral \
+            -PsigningInMemoryKey=$GPG_KEY \
+            -PsigningInMemoryKeyPassword=$GPG_PASSWORD \
+            -PmavenCentralUsername=$MAVEN_USERNAME \
+            -PmavenCentralPassword=$MAVEN_PASSWORD
+
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
