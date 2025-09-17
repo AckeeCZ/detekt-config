@@ -20,6 +20,10 @@ ackee-detekt-config-core = { module = "io.github.ackeecz:detekt-config-core", ve
 Then in your `build.gradle.kts`:
 
 ```kotlin
+// This needs to be imported to use a creating delegate. Currently AndroidStudio does not import it
+// correctly.
+import org.gradle.kotlin.dsl.getValue
+
 val detektConfig: Configuration by configurations.creating {}
 
 detekt {
