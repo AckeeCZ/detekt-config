@@ -4,10 +4,10 @@ comments:
 
 complexity:
   CyclomaticComplexMethod:
-    excludes: "**Test.kt"
+    excludes: ['**Test.kt', '**Tests.kt', '**TestSuite.kt']
   LongMethod:
     ignoreAnnotated: ['Composable', 'TestDataFactory']
-    excludes: "**Test.kt"
+    excludes: ['**Test.kt', '**Tests.kt', '**TestSuite.kt']
   LongParameterList:
     ignoreAnnotated: ['Composable', 'TestDataFactory']
   TooManyFunctions:
