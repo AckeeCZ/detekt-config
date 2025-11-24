@@ -8,6 +8,11 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [Unreleased]
 ### core
 
+## [1.0.1] - 2025-11-24
+### core
+#### Added
+- Regexes to exclude more types of test files (`'**Tests.kt'`, `'**TestSuite.kt'`) from `LongMethod` and `CyclomaticComplexMethod` rules.
+
 ## [1.0.0] - 2025-09-16
 ### core
 #### Added
