@@ -17,7 +17,7 @@ exceptions:
   TooGenericExceptionCaught:
     active: false
 
-formatting:
+ktlint:
   ArgumentListWrapping:
     maxLineLength: 150
   CommentWrapping:
@@ -46,12 +46,16 @@ naming:
     ignoreAnnotated: ['Composable']
 
 style:
+  AbstractClassCanBeConcreteClass:
+    active: false
+  AbstractClassCanBeInterface:
+    active: false
   MagicNumber:
     ignorePropertyDeclaration: true
     ignoreLocalVariableDeclaration: true
   MaxLineLength:
     maxLineLength: 150
-  UnnecessaryAbstractClass:
-    active: false
-  UnusedPrivateMember:
+  UnusedPrivateFunction:
+    ignoreAnnotated: [ 'Preview' ]
+  UnusedPrivateProperty:
     ignoreAnnotated: [ 'Preview' ]

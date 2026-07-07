@@ -12,7 +12,7 @@ kotlin {
     jvmToolchain(21)
 }
 
-val detektConfig: Configuration by configurations.creating {}
+val detektConfig: Configuration = configurations.create("detektConfig") {}
 
 detekt {
     buildUponDefaultConfig = true
@@ -21,10 +21,10 @@ detekt {
 }
 
 dependencies {
-    detektPlugins(libs.detekt.formatting)
+    detektPlugins(libs.detekt.rules.ktlint.wrapper)
 
     @Suppress("unused")
-    val configVersion = "1.0.0"
+    val configVersion = "2.0.0-detektalpha.5"
     // Uncomment dependencies for testing changes published to Maven Local
 //    detektConfig("io.github.ackeecz:detekt-config-core:$configVersion")
 }
