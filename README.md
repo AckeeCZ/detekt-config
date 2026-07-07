@@ -4,6 +4,8 @@ Simple repository that contains Detekt configurations that we share among our pr
 ## Architecture
 The project consists of several modules:
 - `core` - contains shared configuration of the standard built-in Detekt rules
+- `sample` - a test harness that verifies each configured rule actually takes effect; see
+  [`sample/README.md`](sample/README.md)
 
 ## Setup
 

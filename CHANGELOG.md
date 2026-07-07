@@ -15,6 +15,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
     and `AbstractClassCanBeInterface`, both disabled to preserve the original behaviour.
   - Replaced the removed `UnusedPrivateMember` rule with its successors `UnusedPrivateFunction` and
     `UnusedPrivateProperty`, keeping the `Preview` annotation ignored on both.
+#### Removed
+- Removed the redundant `AbsentOrWrongFileLicense` and `MagicNumber` overrides. Both only restated Detekt 2.0
+  defaults (`AbsentOrWrongFileLicense` is disabled by default, and `MagicNumber` already ignores property and
+  local variable declarations), so they had no effect on the resulting configuration.
 
 ## [1.0.1] - 2025-11-24
 ### core
