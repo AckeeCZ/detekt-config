@@ -16,14 +16,18 @@ exceptions:
 ktlint:
   ArgumentListWrapping:
     maxLineLength: 150
+  ClassSignature:
+    active: false
   CommentWrapping:
     active: false
   ContextReceiverMapping:
     maxLineLength: 150
+  FunctionExpressionBody:
+    active: false
   FunctionReturnTypeSpacing:
     maxLineLength: 150
   FunctionSignature:
-    maxLineLength: 150
+    active: false
   MaximumLineLength:
     maxLineLength: 150
   ParameterListSpacing:

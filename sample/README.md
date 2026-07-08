@@ -26,8 +26,10 @@ src/main/kotlin/core/
 │   └── TooGenericExceptionCaught.kt       # active: false
 ├── ktlint/
 │   ├── ArgumentListWrapping.kt            # maxLineLength: 150
+│   ├── ClassSignature.kt                  # active: false
 │   ├── CommentWrapping.kt                 # active: false
-│   ├── FunctionSignature.kt               # maxLineLength: 150
+│   ├── FunctionExpressionBody.kt          # active: false
+│   ├── FunctionSignature.kt               # active: false
 │   ├── MaximumLineLength.kt               # maxLineLength: 150
 │   ├── ParameterListWrapping.kt           # maxLineLength: 150
 │   ├── ParameterWrapping.kt               # maxLineLength: 150
