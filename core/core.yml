@@ -1,7 +1,3 @@
-comments:
-  AbsentOrWrongFileLicense:
-    active: false
-
 complexity:
   CyclomaticComplexMethod:
     excludes: ['**Test.kt', '**Tests.kt', '**TestSuite.kt']
@@ -17,17 +13,21 @@ exceptions:
   TooGenericExceptionCaught:
     active: false
 
-formatting:
+ktlint:
   ArgumentListWrapping:
     maxLineLength: 150
+  ClassSignature:
+    active: false
   CommentWrapping:
     active: false
   ContextReceiverMapping:
     maxLineLength: 150
+  FunctionExpressionBody:
+    active: false
   FunctionReturnTypeSpacing:
     maxLineLength: 150
   FunctionSignature:
-    maxLineLength: 150
+    active: false
   MaximumLineLength:
     maxLineLength: 150
   ParameterListSpacing:
@@ -46,12 +46,13 @@ naming:
     ignoreAnnotated: ['Composable']
 
 style:
-  MagicNumber:
-    ignorePropertyDeclaration: true
-    ignoreLocalVariableDeclaration: true
+  AbstractClassCanBeConcreteClass:
+    active: false
+  AbstractClassCanBeInterface:
+    active: false
   MaxLineLength:
     maxLineLength: 150
-  UnnecessaryAbstractClass:
-    active: false
-  UnusedPrivateMember:
+  UnusedPrivateFunction:
+    ignoreAnnotated: [ 'Preview' ]
+  UnusedPrivateProperty:
     ignoreAnnotated: [ 'Preview' ]

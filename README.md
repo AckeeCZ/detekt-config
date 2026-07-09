@@ -4,6 +4,8 @@ Simple repository that contains Detekt configurations that we share among our pr
 ## Architecture
 The project consists of several modules:
 - `core` - contains shared configuration of the standard built-in Detekt rules
+- `sample` - a test harness that verifies each configured rule actually takes effect; see
+  [`sample/README.md`](sample/README.md)
 
 ## Setup
 
@@ -20,11 +22,7 @@ ackee-detekt-config-core = { module = "io.github.ackeecz:detekt-config-core", ve
 Then in your `build.gradle.kts`:
 
 ```kotlin
-// This needs to be imported to use a creating delegate. Currently AndroidStudio does not import it
-// correctly.
-import org.gradle.kotlin.dsl.getValue
-
-val detektConfig: Configuration by configurations.creating {}
+val detektConfig: Configuration = configurations.create("detektConfig") {}
 
 detekt {
     // The config expects that you have buildUponDefaultConfig set to true.

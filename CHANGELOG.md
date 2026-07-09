@@ -7,6 +7,18 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 ### core
+#### Changed
+- Migrated the config to Detekt `2.0.0-alpha.5` (from `1.23.8`). This is a breaking change and the config now
+  requires Detekt 2.0.
+  - Renamed the `formatting` rule set to `ktlint`, following the Detekt 2.0 rename of the ktlint wrapper rule set.
+  - Replaced the removed `UnnecessaryAbstractClass` rule (disabled) with its successors `AbstractClassCanBeConcreteClass`
+    and `AbstractClassCanBeInterface`, both disabled to preserve the original behaviour.
+  - Replaced the removed `UnusedPrivateMember` rule with its successors `UnusedPrivateFunction` and
+    `UnusedPrivateProperty`, keeping the `Preview` annotation ignored on both.
+#### Removed
+- Removed the redundant `AbsentOrWrongFileLicense` and `MagicNumber` overrides. Both only restated Detekt 2.0
+  defaults (`AbsentOrWrongFileLicense` is disabled by default, and `MagicNumber` already ignores property and
+  local variable declarations), so they had no effect on the resulting configuration.
 
 ## [1.0.1] - 2025-11-24
 ### core
