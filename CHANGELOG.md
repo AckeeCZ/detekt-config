@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [2.0.0-detektalpha.5] - 2026-09-07
 ### core
 #### Changed
 - Migrated the config to Detekt `2.0.0-alpha.5` (from `1.23.8`). This is a breaking change and the config now
